@@ -8,13 +8,13 @@ const connect = require("./configs/db");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 const courseController = require("./controllers/courses.controller");
+const instructorController = require("./controllers/instructor.controller");
 app.use("/courses", courseController);
-
+app.use("/instructors", instructorController);
 
 
 app.get("/", (req,res)=>{
