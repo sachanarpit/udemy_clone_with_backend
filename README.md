@@ -21,7 +21,6 @@ Technophile group Web10 batch from Masai School.
 ### Team Members are :
 ##### Arpit Sachan
 ##### Raju
-##### Mani Singh
 ##### Naga Pavan Kumar Chandupatla
 
 ### Purpose :
@@ -44,8 +43,5 @@ After understanding the basic of HTML, CSS & js, we just try to build the websit
 - [Raju](https://github.com/rajujai)
 
 - [CH N Pavan kumar](https://github.com/pavan997)
-
-- [Mani Singh](https://github.com/manisingh2160)
 =======
 # udemy_clone
->>>>>>> 6b282016c3188eea65665d057ee75ee025596750
