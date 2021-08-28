@@ -33,22 +33,70 @@ body {
   background-color: rgb(255, 255, 255);
   padding: 20px;
   margin-right: 60%;
-  width: 36%;
-  height: 65%;
+  width: 50vw;
+  height: 60vh;
   box-shadow: 4px 4px 4px 4px rgba(177, 177, 177, 0.726);
 }
 
+@media screen and (max-width: 400px) and (min-width: 100px) {
+  .hero-content {
+    width: 50vw;
+    height: 30vh;
+  }
+  .hero {
+    width: 100vw;
+    height: 40vh;
+  }
+  .hero-content > input {
+    height: 1vh;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 400px) {
+  .hero-content {
+    width: 50vw;
+    height: 35vh;
+  }
+  .hero {
+    width: 100vw;
+    height: 50vh;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 600px) {
+  .hero-content {
+    width: 50vw;
+    height: 41vh;
+  }
+  .hero {
+    width: 100vw;
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 800px) {
+  .hero-content {
+    width: 50vw;
+    height: 47vh;
+  }
+}
+@media screen and (max-width: 1200px) and (min-width: 1000px) {
+  .hero-content {
+    width: 50vw;
+    height: 50vh;
+  }
+}
+
 .hero-content > h1 {
-  font-size: 3rem;
+  font-size: 4vw;
   font-family: SuisseWorks, Georgia, Times, times new roman, serif,
     apple color emoji, segoe ui emoji, segoe ui symbol;
   font-weight: 700;
-  letter-spacing: -0.15rem;
+  letter-spacing: -0.15vw;
   color: black;
 }
 
 .hero-content > p {
-  font-size: 1.4rem;
+  font-size: 2vw;
   font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui,
     Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji,
     segoe ui symbol;
@@ -59,8 +107,8 @@ body {
 
 .hero-content > input {
   width: 98%;
-  height: 50px;
-  font-size: 15px;
+  height: 6vh;
+  font-size: 1.3vw;
   border: 1px solid rgb(0, 0, 0);
   color: black;
 }
