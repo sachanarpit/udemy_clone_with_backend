@@ -111,7 +111,9 @@
 }
 .pagination {
   display: inline-block;
-  margin: 50px 430px 30px;
+  margin: 50px 230px 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .pagination a {
@@ -146,11 +148,10 @@
 .insdie-after-pg-22 {
   margin-left: 10px;
 }
-.container-lastin-page {
-  /* border:1px solid black; */
+/* .container-lastin-page {
   margin: 0 280px;
   padding: 10px;
-}
+} */
 .container-lastin-page > h1 {
   font-family: sf pro display, -apple-system, BlinkMacSystemFont, Roboto,
     segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji,
@@ -238,8 +239,15 @@
   font-size: 1.2rem;
   border-top: 1px solid #d1d7dc;
 }
+/* .movemarginleft {
+  margin-left: 11px;
+} */
 .movemarginleft {
   margin-left: 11px;
+  width: 22rem;
+  padding-right: 4rem;
+  margin-right: .8rem;
+  max-height: 240rem;
 }
 .button-1-leftfilter {
   background-color: white;

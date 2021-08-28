@@ -10,7 +10,7 @@ body{
     font-weight: 700;
 }
 .btn{
-    padding: 0%;
+    padding: 1%;
     font-weight: 700;
     background-color: inherit;
     border: 1px solid black;
@@ -34,7 +34,7 @@ body{
 .blueBtn{
     background-color: #a435f0;
     border-color: transparent;
-    padding: 4% 0%;
+    padding: 4%;
     width: 100%;
     color: #fff;
     font-weight: 700;
@@ -52,6 +52,13 @@ body{
     /* font-family: sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;; */
     padding: 4% 5%;
     margin: 0%;
+    flex: 1;
+    min-width: 1px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #fff; */
+    min-height: 100%;
+    width: 100%;
 }
 #cartItems{
     display: grid;
@@ -60,11 +67,6 @@ body{
     margin: auto;
     margin-top: 5%;
     margin-bottom: 60px;
-}
-@media only screen and (max-width: 768px) {
-    #cartItems{
-        grid-template-columns: auto;
-    }
 }
 #cartItems > div{
     flex-grow: 2;
@@ -183,5 +185,5 @@ body{
   width: 55%;
 }
 #checkout{
-  padding: 5%;
+  padding: 7%;
 }
