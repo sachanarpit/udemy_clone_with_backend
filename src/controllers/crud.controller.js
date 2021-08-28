@@ -30,18 +30,18 @@ const updateOne = (model) => async (req, res) => {
         return res.status(400).send(err.message);
     }
 };
-const deleteOne = (model, itemName) => async (req, res) => {
+const deleteOne = (model) => async (req, res) => {
     try {
         const item = await model.findByIdAndDelete(req.params.id).lean()
-        return res.status(205).json({ [itemName]: item });
+        return res.status(205).send(item);
     } catch (err) {
         return res.status(400).send(err.message);
     }
 };
-module.exports = (model, itemName) => ({
+module.exports = (model) => ({
     post: post(model),
     get: get(model),
     getOne: getOne(model),
     updateOne: updateOne(model),
-    deleteOne: deleteOne(model, itemName)
+    deleteOne: deleteOne(model)
 })

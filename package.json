@@ -5,18 +5,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js",
     "server": "nodemon src/server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sachanarpit/udemy_clone.git"
   },
   "author": "team_technophile",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sachanarpit/udemy_clone/issues"
-  },
-  "homepage": "https://github.com/sachanarpit/udemy_clone#index",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",

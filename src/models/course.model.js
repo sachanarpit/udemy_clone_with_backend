@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const courseSchema = new mongoose.Schema({
-    course_name:{type:String, required:true},
+    course_name:{type:String, required:true, index:{unique:true}},
     instructors:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:"instructor",
@@ -12,7 +12,6 @@ const courseSchema = new mongoose.Schema({
     price:{type:Number, required:true},
     best:{type:Boolean, default:false},
     course_time:{type:Number, required:true},
-    publish_date:{type:String, required:false},
     description:{type:String, required:true}
 },{
     versionKey:false,

@@ -3,7 +3,7 @@ const instrutorSchema = new mongoose.Schema({
     name:{type:String, required:true},
     expertise:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"tags",
+        ref:"tag",
         required:false
     }],
     bio:{type:String, required:false}
