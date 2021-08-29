@@ -105,11 +105,10 @@ tBill.append(bill);
 let Pay = document.getElementById("Payment");
 Pay.addEventListener("click", function(){
     if(checkInput() || payMethod!="card"){
-        window.location.href = "paySuccess.html";
+        window.location.href = "/payment-success";
     }else{
         alert("Please fill proper details");
     }
-    // window.location.href = "paySuccess.html";
 });
 
 const btn = document.getElementsByClassName("blueBtn");

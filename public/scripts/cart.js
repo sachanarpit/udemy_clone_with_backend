@@ -8,25 +8,21 @@ function getCourseDetails(name) {
   }
 }
 
-// async function getCourseDetails(name) {
-//   try{
-//     let res = await fetch("http://localhost:1777/courses");
-//     let data = await res.json();
-//     // console.log(data);
-//     for (let i = 0; i < data.length; i++) {
-//       let Name = data[i].course_name;
-//       if (Name === name) {
-//         console.log(name);
-//         return data[i];
-//       }
-//     }
-//     return data;
-//   }
-//   catch (err){
-//     console.log(err.message);
-//   }
-// }
+async function getCourseData() {
+  try{
+    let res = await fetch("http://localhost:1777/courses");
+    let data2 = await res.json();
+    console.log(data2);
+    localStorage.removeItem("courseData");
+    localStorage.setItem("courseData", JSON.stringify(data2));
+  }
+  catch (err){
+    console.log(err.message);
+  }
+}
 
+
+getCourseData();
 function check() {
   //if nothing in all three
   if (cartTotal === 0 && saved === 0 && wished === 0) {
@@ -115,7 +111,7 @@ if(cartTotal==null){
 let saved = 0;
 let wished = 0;
 
-const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+const loggedIn = true;
 let Bill;
 
 function applyCouponCode() {
@@ -230,11 +226,11 @@ for (let i = 0; i < removeBtn.length; i++) {
 let checkout = document.getElementById("checkout");
 checkout.addEventListener("click", function () {
   if (loggedIn) {
-    window.location.href = "checkout.html";
+    window.location.href = "/checkout";
   } else {
     window.confirm(
       "Please LogIn to proceed further",
-      (window.location.href = "login.html")
+      (window.location.href = "/login")
     );
   }
 });
