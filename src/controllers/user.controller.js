@@ -9,5 +9,4 @@ router.post("", crudController(User).post);
 router.delete("/:id", crudController(User).deleteOne);
 router.patch("/:id", crudController(User).updateOne);
 
-
 module.exports = router;

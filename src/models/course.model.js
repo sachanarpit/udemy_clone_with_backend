@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const courseSchema = new mongoose.Schema({
-    course_name:{type:String, required:true, index:{unique:true}},
+    course_name:{type:String, required:[true, "Course Name is required"], unique:true},
     instructors:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:"instructor",
@@ -17,6 +17,11 @@ const courseSchema = new mongoose.Schema({
     versionKey:false,
     timestamps:true
 });
+
+courseSchema.path("course_name").validate(async (name)=>{
+    const count = await mongoose.models.course.countDocuments({name})
+    return !count;
+}, "This course is already available. Plaese use different name.");
 
 const Course = mongoose.model("course", courseSchema);
 
