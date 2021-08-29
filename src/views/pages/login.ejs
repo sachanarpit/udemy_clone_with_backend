@@ -138,14 +138,26 @@
             <div class='colorforthis'><img src="https://img.icons8.com/ios-glyphs/48/000000/mac-os.png" width=24 height=24/><div class='sss1'>continue with Apple</div></div>
         
         </div>
-        <form id='form' onsubmit="login(event)">
+        <form id='form' action="/login" method="POST">
             <label for='email1'></label>
-            <input type='text' id='Email' class='usermail' placeholder="Email"></input>
+            <% if(alert!=null){
+              alert.forEach((x)=>{
+                if(x.param == "email"){%>
+                <p class="alert"><%= x.msg %></p>
+              <% }})} %>
+            <input type='text' id='Email' class='usermail' name="email" placeholder="Email"></input>
             <label for='password1'></label>
-            <input type='password' id='password' class='pwdd' placeholder="Password"></input>
+            <% if(alert!=null){
+              alert.forEach((x)=>{
+                if(x.param == "password"){%>
+                <p class="alert"><%= x.msg %></p>
+              <% }})} %>
+            <input type='password' id='password' name="password" class='pwdd' placeholder="Password"></input>
+            <% if(msg!=null){ %>
+              <p class="alert" ><%= msg %></p>
+            <% } %>
 
-
-            <button class=' newlogclass blueBtn' id="logIn" >Log in </button>
+            <button class=' newlogclass blueBtn' id="logIn" type="submit" >Log in </button>
 
             
             <div class='extraafter dj1'><div>or<span> Forgot Password</span></div></div>
@@ -162,28 +174,3 @@
     <script src="scripts/mix.js"></script>
 </body>
 </html>
- 
-
-<script>
-  function login(e) {
-    e.preventDefault();
-    const admins = JSON.parse(localStorage.getItem("userdetails"));
-
-    const form = document.getElementById("form");
-    const user = form.Email.value;
-    const pass = form.password.value;
-
-    for (let i = 0; i < admins.length; i++) {
-      let u = admins[i].mail;
-      let p = admins[i].password;
-
-      if (u == user && p == pass) {
-        window.location.href = "cart.html";
-        localStorage.setItem("loggedIn", true);
-        break;
-      } else {
-        alert("please type correct username/password");
-      }
-    }
-  }
-</script>

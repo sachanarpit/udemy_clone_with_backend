@@ -1,4 +1,4 @@
-var courses = JSON.parse(localStorage.getItem("courseData"));
+var courses = JSON.parse(localStorage.getItem("courseData2"));
 
 function productItems(product) {
   for (var i = 0; i < product.length; i++) {

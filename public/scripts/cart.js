@@ -8,6 +8,21 @@ function getCourseDetails(name) {
   }
 }
 
+async function getCourseData() {
+  try{
+    let res = await fetch("http://localhost:1777/courses");
+    let data2 = await res.json();
+    console.log(data2);
+    localStorage.removeItem("courseData");
+    localStorage.setItem("courseData", JSON.stringify(data2));
+  }
+  catch (err){
+    console.log(err.message);
+  }
+}
+
+
+getCourseData();
 function check() {
   //if nothing in all three
   if (cartTotal === 0 && saved === 0 && wished === 0) {
@@ -96,7 +111,7 @@ if(cartTotal==null){
 let saved = 0;
 let wished = 0;
 
-const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+const loggedIn = true;
 let Bill;
 
 function applyCouponCode() {
@@ -124,8 +139,14 @@ for (let i = 0; i < btnH.length; i++) {
 }
 
 let cart = document.getElementById("cart");
-let data = JSON.parse(localStorage.getItem("courseData"));
+// var data = JSON.parse(localStorage.getItem("courseData"));
+let data;
+// console.log(data);
 
+// data = data0();
+// data0();
+// console.log(data);
+// console.log(data0());
 // let cartBtn = document.getElementsByClassName("cartBtn");
 // for(let i=0;i<cartBtn.length;i++){
 //     cartBtn[i].addEventListener("click", function(){
@@ -161,7 +182,7 @@ function showInCart() {
     let data = getCourseDetails(course);
     let courseName = data.course_name;
     let img = data.img;
-    let tutor = data.teacher;
+    let tutor = data.instructors;
     let price = data.price;
     bill += price;
     price = price.toLocaleString("en-US");
@@ -205,11 +226,11 @@ for (let i = 0; i < removeBtn.length; i++) {
 let checkout = document.getElementById("checkout");
 checkout.addEventListener("click", function () {
   if (loggedIn) {
-    window.location.href = "checkout.html";
+    window.location.href = "/checkout";
   } else {
     window.confirm(
       "Please LogIn to proceed further",
-      (window.location.href = "login.html")
+      (window.location.href = "/login")
     );
   }
 });

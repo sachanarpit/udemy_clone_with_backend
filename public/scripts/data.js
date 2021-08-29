@@ -173,6 +173,6 @@ function setData(){ const courses = [
     },
   ];
 
-localStorage.setItem("courseData", JSON.stringify(courses));
+localStorage.setItem("courseData2", JSON.stringify(courses));
 }
-clearstorage();
+setData();

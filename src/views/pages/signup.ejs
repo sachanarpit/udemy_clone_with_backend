@@ -128,22 +128,39 @@
 
     <div class='login-cont'>
         <div class='step1'>Sign Up and Start Learning!</div>
-        <form id='mainForm'>
+        <form id='mainForm' action="/signup" method="POST">
             <label for='name'></label>
-            <input type='text' id=name class='usermail' placeholder="Name"></input>
-
+            <% if(alert!=null){
+              alert.forEach((x)=>{
+                if(x.param == "name"){%>
+                <p class="alert"><%= x.msg %></p>
+              <% }})} %>
+            <input type='text' id=name class='usermail' name="name" placeholder="Name"></input>
             <label for='Email'></label>
-            <input type='text' id=Email class='usermail' placeholder="Email"></input>
+            <% if(alert!=null){
+              for(let x of alert){
+                if(x.param == "email"){%>
+                <p class="alert"><%= x.msg %></p>
+              <% break; }}} %>
+            <input type='text' id=Email class='usermail' name="email" placeholder="Email"></input>
             <label for='password'></label>
-            <input type='password' id='password' class='pwdd' placeholder="Password"></input>
+            <% if(alert!=null){
+              for(let x of alert){
+                if(x.param == "password"){%>
+                <p class="alert"><%= x.msg %></p>
+              <% break; }}} %>
+            <input type='password' id='password' name="password" class='pwdd' placeholder="Password"></input>
             <input type="checkbox" id="checkp" name="checkp" >
             <label for="checkp">I’m in for emails with exciting discounts and personalized recommendations</label>
-            
-            <button class=' newlogclass blueBtn' onclick="SignUp()">Sign up </button>
+            <% if(msg!=null){ %>
+              <p class="color-yellow atag"><%= msg %><p class="color-yellow atag"><a href="/login" class="atag" >Click here</a>  to Login.</p></p>
+            <% } %>
+            <button type="submit" class=' newlogclass blueBtn'>Sign up </button>
 
             <div class='tandc'>By signing up, you agree to our <span>Terms of Use</span>and <span>Privacy Policy.</span></div>
             <div class='exitto'>Already have an account?<span onclick="loginPage()"> Log In</span></div>
         </form>
+        
     </div>
 <script src="scripts/mix.js"></script>
 </body>

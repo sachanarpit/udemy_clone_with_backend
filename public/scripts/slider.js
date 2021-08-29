@@ -50,10 +50,16 @@ function showCourses(el) {
 
   var instructur = document.createElement("p");
   instructur.setAttribute("class", "instructur");
-  instructur.textContent = el.teacher;
+  instructur.textContent = el.instructors;
 
   var rating = document.createElement("p");
   rating.setAttribute("class", "rating");
+  if(!el.rating){
+    el.rating = 1;
+  }
+  if(!el.noOfRating){
+    el.noOfRating = 1;
+  }
   rating.innerHTML =
     el.rating +
     " ⭐⭐⭐⭐⭐ " +
@@ -71,12 +77,17 @@ function showCourses(el) {
   slide.append(list);
 }
 
-function getCourses() {
-  var data = JSON.parse(localStorage.getItem("courseData"));
-
-  data.forEach(function (x) {
-    showCourses(x);
-  });
+async function getCourses() {
+  try{
+    let res = await fetch("http://localhost:1777/courses");
+    let data = await res.json();
+    data.forEach(function (x) {
+      showCourses(x);
+    });
+  }
+  catch (err){
+    console.log(err.message);
+  }
 }
 getCourses();
 
