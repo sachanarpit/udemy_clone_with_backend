@@ -48,6 +48,7 @@ for (let i = 0; i < cartBtn.length; i++) {
     }
     if (addThis) {
       arr.push(course);
+      localStorage.removeItem("cart");
       localStorage.setItem("cart", JSON.stringify(arr));
     }
     changeText();
