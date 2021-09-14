@@ -49,9 +49,9 @@ router.post("", urlencodedParser, [
                     });
                 }else{
                     const user = await User.create(req.body);
-                    res.render("pages/signup",{
+                    res.render("pages/login",{
                         alert:null,
-                        msg:"Signup successful"
+                        msg:null
                     });
                     res.send(user)
                 }

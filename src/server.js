@@ -55,9 +55,9 @@ app.get("/header", (req,res)=>{
     return res.render("partials/header");
 })
 
+let port = 1777;
 
-
-let listener = app.listen(1777, async ()=>{
+let listener = app.listen(port, async ()=>{
     await connect();
-    console.log(`Listening on Port --> ${listener.address().port}`);
+    console.log(`Listening on Port --> ${port}`);
 })

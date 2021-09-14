@@ -442,8 +442,43 @@
 }
 .cartBtn:hover{
   background-color: #581C7E;
-  color: #1c1d1f;
 }
 .cartBtn{
   background-color: #8710d8;
+  width: 100%;
+  height: 50px;
+  margin: 1%;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: sf pro display, -apple-system, BlinkMacSystemFont,
+    Roboto, segoe ui, Helvetica, Arial, sans-serif,
+    apple color emoji, segoe ui emoji, segoe ui symbol;
+  font-weight: 700;
+}
+.money-back{
+  text-align: center;
+  margin-top: 2%;
+  font-family: sf pro text, -apple-system, BlinkMacSystemFont,
+    Roboto, segoe ui, Helvetica, Arial, sans-serif,
+    apple color emoji, segoe ui emoji, segoe ui symbol;
+  font-weight: 400;
+  color: #1c1d1f;
+  font-size: 0.8rem;  
+}
+
+.course-details{
+  margin-top: 4%;
+  font-family: sf pro display, -apple-system, BlinkMacSystemFont,
+    Roboto, segoe ui, Helvetica, Arial, sans-serif,
+    apple color emoji, segoe ui emoji, segoe ui symbol;
+  font-weight: 700;  
+}
+.buy-now{
+  width: 100%;
+  height: 50px; 
+  margin: 1%; 
+  font-size: 18px
+}
+#price{
+  font-size: 40px;
 }
